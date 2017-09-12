@@ -18,7 +18,7 @@
         android:max="100"
         android:progressDrawable="@android:color/transparent"
         android:thumb="@drawable/slide_view_thumb"
-        android:thumbOffset="0dp"
+        android:thumbOffset="20dp"
         android:background="@null"
         android:splitTrack="false"/>
 
