@@ -33,6 +33,7 @@ public class SlideView extends RelativeLayout implements SeekBar.OnSeekBarChange
     protected ColorStateList slideBackgroundColor;
     protected ColorStateList buttonBackgroundColor;
     protected boolean animateSlideText;
+    protected boolean reverseSlide;
 
     public SlideView(Context context) {
         super(context);
@@ -75,7 +76,6 @@ public class SlideView extends RelativeLayout implements SeekBar.OnSeekBarChange
         int strokeColor;
         float slideTextSize = spToPx(16, getContext());
         String slideText;
-        boolean reverseSlide;
         ColorStateList sliderTextColor;
         try {
             animateSlideText = a.getBoolean(R.styleable.SlideView_animateSlideText, true);
@@ -110,6 +110,15 @@ public class SlideView extends RelativeLayout implements SeekBar.OnSeekBarChange
         } finally {
             a.recycle();
         }
+    }
+
+    public void setReverseSlide(boolean reverse) {
+      reverseSlide = reverse;
+      if(reverse) {
+        slider.setRotation(180);
+      else {
+        slider.setRotation(0);
+      }
     }
 
     public void setTextColor(@ColorInt int color) {
