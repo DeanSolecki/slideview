@@ -106,14 +106,6 @@ public class SlideView extends RelativeLayout implements SeekBar.OnSeekBarChange
             }
             if (reverseSlide) {
                 slider.setRotation(180);
-                LayoutParams params = ((LayoutParams) slideTextView.getLayoutParams());
-                params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, 0);
-                params.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-                    params.addRule(RelativeLayout.ALIGN_PARENT_END, 0);
-                    params.addRule(RelativeLayout.ALIGN_PARENT_START);
-                }
-                slideTextView.setLayoutParams(params);
             }
         } finally {
             a.recycle();
