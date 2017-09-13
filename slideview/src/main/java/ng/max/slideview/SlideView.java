@@ -116,7 +116,7 @@ public class SlideView extends RelativeLayout implements SeekBar.OnSeekBarChange
       reverseSlide = reverse;
       if(reverse) {
         slider.setRotation(180);
-      else {
+      }else {
         slider.setRotation(0);
       }
     }
