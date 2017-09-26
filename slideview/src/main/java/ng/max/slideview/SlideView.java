@@ -34,6 +34,8 @@ public class SlideView extends RelativeLayout implements SeekBar.OnSeekBarChange
     protected ColorStateList buttonBackgroundColor;
     protected boolean animateSlideText;
     protected boolean reverseSlide;
+    protected AttributeSet attrs;
+    protected int defStyle;
 
     public SlideView(Context context) {
         super(context);
@@ -56,7 +58,13 @@ public class SlideView extends RelativeLayout implements SeekBar.OnSeekBarChange
         init(attrs, defStyleAttr);
     }
 
+    public void resetSlideView() {
+      init(attrs, defStyle);
+    }
+
     void init(AttributeSet attrs, int defStyle) {
+        this.attrs = attrs;
+        this.defStyle = defStyle;
         inflate(getContext(), R.layout.sv_slide_view, this);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
             setBackground(ContextCompat.getDrawable(getContext(), R.drawable.slide_view_bg));
